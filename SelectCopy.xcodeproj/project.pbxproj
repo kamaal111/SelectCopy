@@ -12,6 +12,7 @@
 		2C243D832A7C452900CBE04B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C243D822A7C452900CBE04B /* Preview Assets.xcassets */; };
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
+		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2C243D842A7C452900CBE04B /* SelectCopy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelectCopy.entitlements; sourceTree = "<group>"; };
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				2C243D842A7C452900CBE04B /* SelectCopy.entitlements */,
 				2C4192B02A7C46F10037485A /* Localizable.strings */,
 				2C4192AE2A7C46DF0037485A /* AppDelegate.swift */,
+				2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */,
 				2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */,
 				2C243D7F2A7C452900CBE04B /* Assets.xcassets */,
 				2C243D812A7C452900CBE04B /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */,
 				2C243D7C2A7C452800CBE04B /* SelectCopyApp.swift in Sources */,
+				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

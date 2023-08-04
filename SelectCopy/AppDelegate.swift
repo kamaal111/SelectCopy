@@ -5,7 +5,9 @@
 //  Created by Kamaal M Farah on 03/08/2023.
 //
 
+import Cocoa
 import SwiftUI
+import Foundation
 
 // - MARK: AppDelegate
 
@@ -19,6 +21,10 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
+
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            print(print(AXUIElement.focusedElement))
+        }
     }
 }
 
