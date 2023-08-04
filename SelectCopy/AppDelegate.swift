@@ -8,6 +8,7 @@
 import Cocoa
 import SwiftUI
 import Foundation
+import DFAXUIElement
 
 // - MARK: AppDelegate
 
@@ -21,10 +22,7 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
-
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-            print(print(AXUIElement.focusedElement))
-        }
+        observeFocusedElement()
     }
 }
 
@@ -48,6 +46,18 @@ extension AppDelegate {
         let statusItemWindow = statusItem.button!.window
         for window in NSApplication.shared.windows where window != statusItemWindow {
             window.close()
+        }
+    }
+
+    private func observeFocusedElement() {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            guard let selectedText = AXUIElement.focusedElement?.value(attributeKey: "AXSelectedText"),
+                  let selectedText = selectedText as? String,
+                  !selectedText.isEmpty else { return }
+
+            print("🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸")
+            print(selectedText)
+            print("🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸")
         }
     }
 }

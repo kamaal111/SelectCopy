@@ -13,9 +13,11 @@
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
+		A39B64154B008C3E331D0B5F /* libPods-SelectCopy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2CEB2B20BC04200806B969 /* libPods-SelectCopy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C183DAAF7BA0AA0ED304D26 /* Pods-SelectCopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelectCopy.release.xcconfig"; path = "Target Support Files/Pods-SelectCopy/Pods-SelectCopy.release.xcconfig"; sourceTree = "<group>"; };
 		2C243D782A7C452800CBE04B /* SelectCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelectCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCopyApp.swift; sourceTree = "<group>"; };
 		2C243D7F2A7C452900CBE04B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
+		5F2CEB2B20BC04200806B969 /* libPods-SelectCopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SelectCopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20309490218E5514FCBC1B1 /* Pods-SelectCopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelectCopy.debug.xcconfig"; path = "Target Support Files/Pods-SelectCopy/Pods-SelectCopy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39B64154B008C3E331D0B5F /* libPods-SelectCopy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2C243D7A2A7C452800CBE04B /* SelectCopy */,
 				2C243D792A7C452800CBE04B /* Products */,
+				5413EB1EA8ADE73C95D6D5F2 /* Pods */,
+				52DD34BFCA8501D27F7A61F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		52DD34BFCA8501D27F7A61F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F2CEB2B20BC04200806B969 /* libPods-SelectCopy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5413EB1EA8ADE73C95D6D5F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C20309490218E5514FCBC1B1 /* Pods-SelectCopy.debug.xcconfig */,
+				2C183DAAF7BA0AA0ED304D26 /* Pods-SelectCopy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C243D872A7C452900CBE04B /* Build configuration list for PBXNativeTarget "SelectCopy" */;
 			buildPhases = (
+				344B5F930A4C32DE50CC6091 /* [CP] Check Pods Manifest.lock */,
 				2C243D742A7C452800CBE04B /* Sources */,
 				2C243D752A7C452800CBE04B /* Frameworks */,
 				2C243D762A7C452800CBE04B /* Resources */,
@@ -140,6 +166,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		344B5F930A4C32DE50CC6091 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SelectCopy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C243D742A7C452800CBE04B /* Sources */ = {
@@ -270,6 +321,7 @@
 		};
 		2C243D882A7C452900CBE04B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20309490218E5514FCBC1B1 /* Pods-SelectCopy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +350,7 @@
 		};
 		2C243D892A7C452900CBE04B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C183DAAF7BA0AA0ED304D26 /* Pods-SelectCopy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

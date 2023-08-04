@@ -1,0 +1,16 @@
+PODS:
+  - DFAXUIElement (1.0.7)
+
+DEPENDENCIES:
+  - DFAXUIElement (~> 1.0.7)
+
+SPEC REPOS:
+  trunk:
+    - DFAXUIElement
+
+SPEC CHECKSUMS:
+  DFAXUIElement: b9eb7e36d76492ed97a3f2feac099035e3ab0420
+
+PODFILE CHECKSUM: 0cd49b78da5b2ef2ae2f4c3e05ab48d7a8e102f9
+
+COCOAPODS: 1.12.1
