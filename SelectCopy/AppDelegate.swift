@@ -6,11 +6,19 @@
 //
 
 import Cocoa
+import Combine
+import KamaalExtensions
 
 // - MARK: AppDelegate
 
+private let HIGHLIGHTED_TEXT_INTERVAL: TimeInterval = 0.01
+private let HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS = 0.5
+
 final class AppDelegate: NSObject {
+    @Published private var highlightedTextBuffer: String?
+
     private var statusItem: NSStatusItem!
+    private var highlightedTextBufferSubscription = Set<AnyCancellable>()
 }
 
 // - MARK: NSApplicationDelegate
@@ -19,7 +27,8 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
-        observeFocusedElement()
+        observeTextHighlighting()
+        observeHighlightedTextBuffer()
     }
 }
 
@@ -46,15 +55,34 @@ extension AppDelegate {
         }
     }
 
-    private func observeFocusedElement() {
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-            guard let selectedText = AXUIElement.focusedElement?.getValue(for: .selectedText),
-                  let selectedText = selectedText as? String,
-                  !selectedText.isEmpty else { return }
+    private func observeTextHighlighting() {
+        Timer.scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] timer in
+            guard let self else { return }
+            guard let focusedElement = AXUIElement.focusedElement else { return }
+            guard let selectedText = focusedElement.getValue(for: .selectedText) else { return }
+            guard let selectedText = selectedText as? String else { return }
+            guard !selectedText.trimmingByWhitespacesAndNewLines.isEmpty else { return }
+            guard selectedText != self.highlightedTextBuffer else { return }
 
-            print("🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸")
-            print(selectedText)
-            print("🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸🐸")
+            self.highlightedTextBuffer = selectedText
         }
+    }
+
+    private func observeHighlightedTextBuffer() {
+        $highlightedTextBuffer
+            .debounce(for: .seconds(HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS), scheduler: DispatchQueue.global())
+            .sink(receiveValue: { [weak self] value in
+                guard let self else { return }
+                guard let value else { return }
+
+                self.storeHighlightedText(value)
+            })
+            .store(in: &highlightedTextBufferSubscription)
+    }
+
+    private func storeHighlightedText(_ highlightedText: String) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: nil)
+        pasteboard.setString(highlightedText, forType: .string)
     }
 }
