@@ -21,21 +21,6 @@ final class AppDelegate: NSObject {
     private var statusItem: NSStatusItem!
     private var highlightedTextBufferSubscription = Set<AnyCancellable>()
     private let userData = UserData()
-
-    private lazy var menu: NSMenu = {
-        let menu = NSMenu()
-        menu.addItem(
-            withTitle: NSLocalizedString("Settings", comment: ""),
-            action: #selector(openPreferences),
-            keyEquivalent: ","
-        )
-        menu.addItem(
-            withTitle: NSLocalizedString("Quit SelectCopy", comment: ""),
-            action: #selector(quitApp),
-            keyEquivalent: "Q"
-        )
-        return menu
-    }()
 }
 
 // - MARK: NSApplicationDelegate
@@ -58,6 +43,7 @@ extension AppDelegate {
             systemSymbolName: "highlighter",
             accessibilityDescription: NSLocalizedString("Text hightlighter icon", comment: "")
         )
+        let menu = AppMenu.build(userData: userData)
         statusItem.menu = menu
     }
 
@@ -96,20 +82,5 @@ extension AppDelegate {
         let pasteboard = NSPasteboard.general
         pasteboard.declareTypes([.string], owner: nil)
         pasteboard.setString(highlightedText, forType: .string)
-    }
-
-    @objc
-    private func quitApp(_: NSMenuItem) {
-        NSApplication.shared.terminate(self)
-    }
-
-    @objc
-    private func openPreferences(_: NSMenuItem) {
-        let controller = NSHostingController(rootView: AppSettingsScreen().environmentObject(userData))
-        let window = NSWindow(contentViewController: controller)
-        window.title = NSLocalizedString("Settings", comment: "")
-        window.makeKeyAndOrderFront(self)
-        let windowController = NSWindowController(window: window)
-        windowController.showWindow(self)
     }
 }
