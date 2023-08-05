@@ -8,20 +8,6 @@
 import Cocoa
 import Foundation
 
-enum AXAttributes {
-    case selectedText
-    case focuseElement
-
-    var rawValue: String {
-        switch self {
-        case .focuseElement: return kAXFocusedUIElementAttribute
-        case .selectedText: return "AXSelectedText"
-        }
-    }
-
-    var asCFString: CFString { rawValue as CFString }
-}
-
 extension AXUIElement {
     func getSelectedText() -> String? {
         getValue(for: .selectedText) as? String
@@ -66,6 +52,20 @@ extension AXUIElement {
     }
 
     private static var systemWide = AXUIElementCreateSystemWide()
+}
+
+private enum AXAttributes {
+    case selectedText
+    case focuseElement
+
+    var rawValue: String {
+        switch self {
+        case .focuseElement: return kAXFocusedUIElementAttribute
+        case .selectedText: return "AXSelectedText"
+        }
+    }
+
+    var asCFString: CFString { rawValue as CFString }
 }
 
 extension AXValue {

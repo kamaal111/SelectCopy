@@ -18,6 +18,7 @@
 		2CA4D3F52A7EAF3C005FAD6D /* KamaalExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA4D3F42A7EAF3C005FAD6D /* KamaalExtensions */; };
 		2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCDF51B2A7EEA1C0028900C /* UserData.swift */; };
 		2CDF1D512A7EEF5800C3C60E /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF1D502A7EEF5800C3C60E /* AppMenu.swift */; };
+		2CDF1D532A7EF73200C3C60E /* TextHighlightObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF1D522A7EF73200C3C60E /* TextHighlightObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2CDF1D4E2A7EEEAF00C3C60E /* justfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = justfile; sourceTree = "<group>"; };
 		2CDF1D4F2A7EEEB900C3C60E /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		2CDF1D502A7EEF5800C3C60E /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
+		2CDF1D522A7EF73200C3C60E /* TextHighlightObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHighlightObserver.swift; sourceTree = "<group>"; };
 		5F2CEB2B20BC04200806B969 /* libPods-SelectCopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SelectCopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */,
 				2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */,
 				2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */,
+				2CDF1D522A7EF73200C3C60E /* TextHighlightObserver.swift */,
 				2CCDF51B2A7EEA1C0028900C /* UserData.swift */,
 				2C243D7F2A7C452900CBE04B /* Assets.xcassets */,
 				2C243D812A7C452900CBE04B /* Preview Content */,
@@ -185,6 +188,7 @@
 				2CDF1D512A7EEF5800C3C60E /* AppMenu.swift in Sources */,
 				2C683B9D2A7ED26E008C8D21 /* AppSettingsScreen.swift in Sources */,
 				2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */,
+				2CDF1D532A7EF73200C3C60E /* TextHighlightObserver.swift in Sources */,
 				2C243D7C2A7C452800CBE04B /* SelectCopyApp.swift in Sources */,
 				2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */,
 				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
