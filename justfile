@@ -6,3 +6,8 @@ default:
 
 format:
   swiftformat .
+
+bootstrap: install-node-modules
+
+install-node-modules:
+  npm i
