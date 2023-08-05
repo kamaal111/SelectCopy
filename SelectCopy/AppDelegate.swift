@@ -19,6 +19,16 @@ final class AppDelegate: NSObject {
 
     private var statusItem: NSStatusItem!
     private var highlightedTextBufferSubscription = Set<AnyCancellable>()
+
+    private lazy var menu: NSMenu = {
+        let menu = NSMenu()
+        menu.addItem(
+            withTitle: NSLocalizedString("Quit SelectCopy", comment: ""),
+            action: #selector(quitApp),
+            keyEquivalent: "Q"
+        )
+        return menu
+    }()
 }
 
 // - MARK: NSApplicationDelegate
@@ -41,12 +51,7 @@ extension AppDelegate {
             systemSymbolName: "highlighter",
             accessibilityDescription: NSLocalizedString("Text hightlighter icon", comment: "")
         )
-        statusItem.button!.action = #selector(toggleStatusItem)
-    }
-
-    @objc
-    private func toggleStatusItem(_: NSStatusBarButton) {
-        print("Pressing")
+        statusItem.menu = menu
     }
 
     private func closeAllWindowsExceptForStatusBarWindow() {
@@ -63,9 +68,9 @@ extension AppDelegate {
             guard let selectedText = focusedElement.getValue(for: .selectedText) else { return }
             guard let selectedText = selectedText as? String else { return }
             guard !selectedText.trimmingByWhitespacesAndNewLines.isEmpty else { return }
-            guard selectedText != self.highlightedTextBuffer else { return }
+            guard selectedText != highlightedTextBuffer else { return }
 
-            self.highlightedTextBuffer = selectedText
+            highlightedTextBuffer = selectedText
         }
     }
 
@@ -76,7 +81,7 @@ extension AppDelegate {
                 guard let self else { return }
                 guard let value else { return }
 
-                self.storeHighlightedText(value)
+                storeHighlightedText(value)
             })
             .store(in: &highlightedTextBufferSubscription)
     }
@@ -85,5 +90,10 @@ extension AppDelegate {
         let pasteboard = NSPasteboard.general
         pasteboard.declareTypes([.string], owner: nil)
         pasteboard.setString(highlightedText, forType: .string)
+    }
+
+    @objc
+    private func quitApp(_: NSMenuItem) {
+        NSApplication.shared.terminate(self)
     }
 }
