@@ -20,6 +20,7 @@ final class AppDelegate: NSObject {
 
     private var statusItem: NSStatusItem!
     private var highlightedTextBufferSubscription = Set<AnyCancellable>()
+    private let userData = UserData()
 
     private lazy var menu: NSMenu = {
         let menu = NSMenu()
@@ -71,8 +72,7 @@ extension AppDelegate {
         Timer.scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] _ in
             guard let self else { return }
             guard let focusedElement = AXUIElement.focusedElement else { return }
-            guard let selectedText = focusedElement.getValue(for: .selectedText) else { return }
-            guard let selectedText = selectedText as? String else { return }
+            guard let selectedText = focusedElement.getSelectedText() else { return }
             guard !selectedText.trimmingByWhitespacesAndNewLines.isEmpty else { return }
             guard selectedText != highlightedTextBuffer else { return }
 
@@ -105,7 +105,7 @@ extension AppDelegate {
 
     @objc
     private func openPreferences(_: NSMenuItem) {
-        let controller = NSHostingController(rootView: AppSettingsScreen())
+        let controller = NSHostingController(rootView: AppSettingsScreen().environmentObject(userData))
         let window = NSWindow(contentViewController: controller)
         window.title = NSLocalizedString("Settings", comment: "")
         window.makeKeyAndOrderFront(self)

@@ -23,11 +23,8 @@ enum AXAttributes {
 }
 
 extension AXUIElement {
-    func getValue(for attribute: AXAttributes) -> Any? {
-        guard let value = getRawValue(for: attribute) else { return nil }
-        guard let castedValue = castToUnderlyingType(value) else { return nil }
-
-        return castedValue
+    func getSelectedText() -> String? {
+        getValue(for: .selectedText) as? String
     }
 
     func getAttributeNames() -> [String] {
@@ -42,6 +39,13 @@ extension AXUIElement {
         guard let value = systemWide.getValue(for: .focuseElement) else { return nil }
 
         return value as! AXUIElement
+    }
+
+    private func getValue(for attribute: AXAttributes) -> Any? {
+        guard let value = getRawValue(for: attribute) else { return nil }
+        guard let castedValue = castToUnderlyingType(value) else { return nil }
+
+        return castedValue
     }
 
     private func getRawValue(for attribute: AXAttributes) -> AnyObject? {

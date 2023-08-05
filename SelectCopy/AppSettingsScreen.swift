@@ -9,9 +9,11 @@ import SwiftUI
 import KamaalSettings
 
 struct AppSettingsScreen: View {
+    @EnvironmentObject private var userData: UserData
+
     var body: some View {
-        SettingsScreen(configuration: .init())
-            .frame(minWidth: 300, minHeight: 300)
+        SettingsScreen(configuration: userData.settingsConfiguration)
+            .frame(width: 300, height: 100)
     }
 }
 
