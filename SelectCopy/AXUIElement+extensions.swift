@@ -41,7 +41,7 @@ extension AXUIElement {
     static var focusedElement: AXUIElement? {
         guard let value = systemWide.getValue(for: .focuseElement) else { return nil }
 
-        return (value as! AXUIElement)
+        return value as! AXUIElement
     }
 
     private func getRawValue(for attribute: AXAttributes) -> AnyObject? {
@@ -55,7 +55,7 @@ extension AXUIElement {
 
     private func castToUnderlyingType(_ value: AnyObject) -> Any? {
         switch CFGetTypeID(value) {
-        case AXUIElementGetTypeID(): return (value as! AXUIElement)
+        case AXUIElementGetTypeID(): return value as! AXUIElement
         case AXValueGetTypeID(): return (value as! AXValue).getValue()
         default: return value
         }

@@ -24,7 +24,7 @@ final class AppDelegate: NSObject {
 // - MARK: NSApplicationDelegate
 
 extension AppDelegate: NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ notification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
         observeTextHighlighting()
@@ -39,12 +39,13 @@ extension AppDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.button!.image = NSImage(
             systemSymbolName: "highlighter",
-            accessibilityDescription: NSLocalizedString("Text hightlighter icon", comment: ""))
+            accessibilityDescription: NSLocalizedString("Text hightlighter icon", comment: "")
+        )
         statusItem.button!.action = #selector(toggleStatusItem)
     }
 
     @objc
-    private func toggleStatusItem(_ button: NSStatusBarButton) {
+    private func toggleStatusItem(_: NSStatusBarButton) {
         print("Pressing")
     }
 
@@ -56,7 +57,7 @@ extension AppDelegate {
     }
 
     private func observeTextHighlighting() {
-        Timer.scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] _ in
             guard let self else { return }
             guard let focusedElement = AXUIElement.focusedElement else { return }
             guard let selectedText = focusedElement.getValue(for: .selectedText) else { return }
