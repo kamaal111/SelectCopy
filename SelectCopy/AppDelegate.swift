@@ -6,13 +6,14 @@
 //
 
 import Cocoa
+import SwiftUI
 import Combine
 import KamaalExtensions
 
 // - MARK: AppDelegate
 
 private let HIGHLIGHTED_TEXT_INTERVAL: TimeInterval = 0.01
-private let HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS = 0.5
+private let HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS = 0.3
 
 final class AppDelegate: NSObject {
     @Published private var highlightedTextBuffer: String?
@@ -22,6 +23,11 @@ final class AppDelegate: NSObject {
 
     private lazy var menu: NSMenu = {
         let menu = NSMenu()
+        menu.addItem(
+            withTitle: NSLocalizedString("Settings", comment: ""),
+            action: #selector(openPreferences),
+            keyEquivalent: ","
+        )
         menu.addItem(
             withTitle: NSLocalizedString("Quit SelectCopy", comment: ""),
             action: #selector(quitApp),
@@ -95,5 +101,15 @@ extension AppDelegate {
     @objc
     private func quitApp(_: NSMenuItem) {
         NSApplication.shared.terminate(self)
+    }
+
+    @objc
+    private func openPreferences(_: NSMenuItem) {
+        let controller = NSHostingController(rootView: AppSettingsScreen())
+        let window = NSWindow(contentViewController: controller)
+        window.title = NSLocalizedString("Settings", comment: "")
+        window.makeKeyAndOrderFront(self)
+        let windowController = NSWindowController(window: window)
+        windowController.showWindow(self)
     }
 }
