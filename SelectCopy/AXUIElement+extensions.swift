@@ -6,26 +6,94 @@
 //
 
 import Cocoa
+import Foundation
+
+enum AXAttributes {
+    case selectedText
+    case focuseElement
+
+    var rawValue: String {
+        switch self {
+        case .focuseElement: return kAXFocusedUIElementAttribute
+        case .selectedText: return "AXSelectedText"
+        }
+    }
+
+    var asCFString: CFString { rawValue as CFString }
+}
 
 extension AXUIElement {
-    private static var systemWide = AXUIElementCreateSystemWide()
+    func getValue(for attribute: AXAttributes) -> Any? {
+        guard let value = getRawValue(for: attribute) else { return nil }
+        guard let castedValue = castToUnderlyingType(value) else { return nil }
+
+        return castedValue
+    }
+
+    func getAttributeNames() -> [String] {
+        var attirbutes: CFArray?
+        let error = AXUIElementCopyAttributeNames(self, &attirbutes)
+        guard error == .success else { return [] }
+
+        return (attirbutes as? [String]) ?? []
+    }
 
     static var focusedElement: AXUIElement? {
-        systemWide.element(for: kAXFocusedUIElementAttribute)
+        guard let value = systemWide.getValue(for: .focuseElement) else { return nil }
+
+        return (value as! AXUIElement)
     }
 
-    private func element(for attribute: String) -> AXUIElement? {
-        guard let rawValue = rawValue(for: attribute) else { return nil }
-        guard CFGetTypeID(rawValue) == AXUIElementGetTypeID() else { return nil }
-
-        return (rawValue as! AXUIElement)
-    }
-
-    private func rawValue(for attribute: String) -> AnyObject? {
-        var rawValue: AnyObject?
-        let error = AXUIElementCopyAttributeValue(self, attribute as CFString, &rawValue)
+    private func getRawValue(for attribute: AXAttributes) -> AnyObject? {
+        var value: AnyObject?
+        let error = AXUIElementCopyAttributeValue(self, attribute.asCFString, &value)
         guard error == .success else { return nil }
+        guard let value else { return nil }
 
-        return rawValue
+        return value
+    }
+
+    private func castToUnderlyingType(_ value: AnyObject) -> Any? {
+        switch CFGetTypeID(value) {
+        case AXUIElementGetTypeID(): return (value as! AXUIElement)
+        case AXValueGetTypeID(): return (value as! AXValue).getValue()
+        default: return value
+        }
+    }
+
+    private static var systemWide = AXUIElementCreateSystemWide()
+}
+
+extension AXValue {
+    func getValue() -> Any? {
+        let type = getType()
+        switch type {
+        case .axError:
+            var value = AXError.failure
+            AXValueGetValue(self, type, &value)
+            return value
+        case .cgSize:
+            var value: CGSize = .zero
+            AXValueGetValue(self, type, &value)
+            return value
+        case .cgPoint:
+            var value: CGPoint = .zero
+            AXValueGetValue(self, type, &value)
+            return value
+        case .cgRect:
+            var value: CGRect = .zero
+            AXValueGetValue(self, type, &value)
+            return value
+        case .cfRange:
+            var value = CFRange()
+            AXValueGetValue(self, type, &value)
+            return value
+        case .illegal: return nil
+        @unknown default: return nil
+        }
+    }
+
+    private func getType() -> AXValueType {
+        AXValueGetType(self)
     }
 }

@@ -1,2 +1,5 @@
-install-deps:
-    pod install
+set export
+set dotenv-load
+
+default:
+  just --list

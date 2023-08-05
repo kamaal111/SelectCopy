@@ -6,9 +6,6 @@
 //
 
 import Cocoa
-import SwiftUI
-import Foundation
-import DFAXUIElement
 
 // - MARK: AppDelegate
 
@@ -51,7 +48,7 @@ extension AppDelegate {
 
     private func observeFocusedElement() {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-            guard let selectedText = AXUIElement.focusedElement?.value(attributeKey: "AXSelectedText"),
+            guard let selectedText = AXUIElement.focusedElement?.getValue(for: .selectedText),
                   let selectedText = selectedText as? String,
                   !selectedText.isEmpty else { return }
 
