@@ -6,16 +6,23 @@
 //
 
 import SwiftUI
+import KamaalUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            KScrollableForm {
+                KSection(header: "Personalization") {
+                    PlaygroundNavigationButton(title: "App logo creator", destination: .appLogoCreator)
+                }
+            }
+            .navigationDestination(for: Screens.self) { screen in
+                switch screen {
+                case .appLogoCreator: AppLogoCreatorScreen()
+                }
+            }
         }
-        .padding()
+        .padding(.all, 16)
     }
 }
 
