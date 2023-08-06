@@ -67,6 +67,8 @@ extension AppDelegate: NSApplicationDelegate {
     }
 }
 
+// - MARK: NSMenuDelegate
+
 extension AppDelegate: NSMenuDelegate {
     func menuWillOpen(_: NSMenu) {
         canCopyTextMenuItem.title = toggleCopyMenuItemText
