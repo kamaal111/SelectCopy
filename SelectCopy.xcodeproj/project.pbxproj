@@ -7,20 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C15BC602A7FF61700E422D8 /* AppLogoColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15BC5F2A7FF61700E422D8 /* AppLogoColorSelector.swift */; };
+		2C15BC622A7FF8A500E422D8 /* KamaalUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 2C15BC612A7FF8A500E422D8 /* KamaalUtils */; };
+		2C15BC642A7FF91000E422D8 /* KamaalExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2C15BC632A7FF91000E422D8 /* KamaalExtensions */; };
+		2C236B112A80095F00B40143 /* Shell+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C236B102A80095F00B40143 /* Shell+extensions.swift */; };
 		2C243D7C2A7C452800CBE04B /* SelectCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */; };
 		2C243D802A7C452900CBE04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C243D7F2A7C452900CBE04B /* Assets.xcassets */; };
 		2C243D832A7C452900CBE04B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C243D822A7C452900CBE04B /* Preview Assets.xcassets */; };
+		2C318A932A80092100CA9B51 /* app-icon-generator in Resources */ = {isa = PBXBuildFile; fileRef = 2C318A922A80092100CA9B51 /* app-icon-generator */; };
 		2C3AD8532A7FAB4400D624FB /* AppLogoCreatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */; };
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
+		2C4B38402A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */; };
+		2C4DC8C02A7FAED8007501E5 /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */; };
 		2C683B9D2A7ED26E008C8D21 /* AppSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */; };
 		2C683B9F2A7ED31A008C8D21 /* KamaalSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 2C683B9E2A7ED31A008C8D21 /* KamaalSettings */; };
 		2C714D362A7FA687004796F5 /* PlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C714D352A7FA687004796F5 /* PlaygroundApp.swift */; };
 		2C714D382A7FA687004796F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C714D372A7FA687004796F5 /* ContentView.swift */; };
-		2C714D3A2A7FA688004796F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C714D392A7FA688004796F5 /* Assets.xcassets */; };
 		2C714D3D2A7FA688004796F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C714D3C2A7FA688004796F5 /* Preview Assets.xcassets */; };
 		2C7FAF1C2A7FAC81005C932F /* WideNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FAF1B2A7FAC81005C932F /* WideNavigationLink.swift */; };
+		2C7FAF1D2A7FAE30005C932F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C243D7F2A7C452900CBE04B /* Assets.xcassets */; };
 		2CA4D3F52A7EAF3C005FAD6D /* KamaalExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA4D3F42A7EAF3C005FAD6D /* KamaalExtensions */; };
 		2CC5FF392A7FAC23004FB0C4 /* PlaygroundNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC5FF382A7FAC23004FB0C4 /* PlaygroundNavigationButton.swift */; };
 		2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCDF51B2A7EEA1C0028900C /* UserData.swift */; };
@@ -31,20 +38,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C15BC5F2A7FF61700E422D8 /* AppLogoColorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoColorSelector.swift; sourceTree = "<group>"; };
+		2C236B102A80095F00B40143 /* Shell+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shell+extensions.swift"; sourceTree = "<group>"; };
 		2C243D782A7C452800CBE04B /* SelectCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelectCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCopyApp.swift; sourceTree = "<group>"; };
 		2C243D7F2A7C452900CBE04B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C243D822A7C452900CBE04B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C243D842A7C452900CBE04B /* SelectCopy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelectCopy.entitlements; sourceTree = "<group>"; };
+		2C318A922A80092100CA9B51 /* app-icon-generator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "app-icon-generator"; sourceTree = "<group>"; };
 		2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoCreatorScreen.swift; sourceTree = "<group>"; };
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
+		2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoColorFormRow.swift; sourceTree = "<group>"; };
+		2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
 		2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsScreen.swift; sourceTree = "<group>"; };
 		2C714D332A7FA687004796F5 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C714D352A7FA687004796F5 /* PlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundApp.swift; sourceTree = "<group>"; };
 		2C714D372A7FA687004796F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2C714D392A7FA688004796F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C714D3C2A7FA688004796F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C714D3E2A7FA688004796F5 /* Playground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playground.entitlements; sourceTree = "<group>"; };
 		2C7FAF1B2A7FAC81005C932F /* WideNavigationLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WideNavigationLink.swift; sourceTree = "<group>"; };
@@ -73,7 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C15BC642A7FF91000E422D8 /* KamaalExtensions in Frameworks */,
 				2CE09A392A7FAAA700F63BC4 /* KamaalUI in Frameworks */,
+				2C15BC622A7FF8A500E422D8 /* KamaalUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,15 +141,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2C318A912A8008AE00CA9B51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C318A922A80092100CA9B51 /* app-icon-generator */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C318A942A80093300CA9B51 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C236B102A80095F00B40143 /* Shell+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2C714D342A7FA687004796F5 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
 				2C714D3E2A7FA688004796F5 /* Playground.entitlements */,
+				2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */,
 				2C714D372A7FA687004796F5 /* ContentView.swift */,
 				2C714D352A7FA687004796F5 /* PlaygroundApp.swift */,
 				2CFB4E972A7FAB6D006F113B /* Screens.swift */,
-				2C714D392A7FA688004796F5 /* Assets.xcassets */,
+				2C318A942A80093300CA9B51 /* Extensions */,
 				2C714D3B2A7FA688004796F5 /* Preview Content */,
+				2C318A912A8008AE00CA9B51 /* Resources */,
 				2CE09A3A2A7FAAC100F63BC4 /* Views */,
 			);
 			path = Playground;
@@ -170,6 +201,8 @@
 		2CFB4E992A7FABBB006F113B /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */,
+				2C15BC5F2A7FF61700E422D8 /* AppLogoColorSelector.swift */,
 				2CC5FF382A7FAC23004FB0C4 /* PlaygroundNavigationButton.swift */,
 				2C7FAF1B2A7FAC81005C932F /* WideNavigationLink.swift */,
 			);
@@ -223,6 +256,8 @@
 			name = Playground;
 			packageProductDependencies = (
 				2CE09A382A7FAAA700F63BC4 /* KamaalUI */,
+				2C15BC612A7FF8A500E422D8 /* KamaalUtils */,
+				2C15BC632A7FF91000E422D8 /* KamaalExtensions */,
 			);
 			productName = Playground;
 			productReference = 2C714D332A7FA687004796F5 /* Playground.app */;
@@ -283,8 +318,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7FAF1D2A7FAE30005C932F /* Assets.xcassets in Resources */,
+				2C318A932A80092100CA9B51 /* app-icon-generator in Resources */,
 				2C714D3D2A7FA688004796F5 /* Preview Assets.xcassets in Resources */,
-				2C714D3A2A7FA688004796F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C15BC602A7FF61700E422D8 /* AppLogoColorSelector.swift in Sources */,
 				2CC5FF392A7FAC23004FB0C4 /* PlaygroundNavigationButton.swift in Sources */,
+				2C4B38402A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift in Sources */,
 				2C714D382A7FA687004796F5 /* ContentView.swift in Sources */,
+				2C236B112A80095F00B40143 /* Shell+extensions.swift in Sources */,
+				2C4DC8C02A7FAED8007501E5 /* AppLogo.swift in Sources */,
 				2C3AD8532A7FAB4400D624FB /* AppLogoCreatorScreen.swift in Sources */,
 				2C714D362A7FA687004796F5 /* PlaygroundApp.swift in Sources */,
 				2C7FAF1C2A7FAC81005C932F /* WideNavigationLink.swift in Sources */,
@@ -511,6 +551,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,6 +579,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,12 +626,22 @@
 			repositoryURL = "https://github.com/Kamaalio/KamaalSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C15BC612A7FF8A500E422D8 /* KamaalUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CA4D3ED2A7EAF3C005FAD6D /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalUtils;
+		};
+		2C15BC632A7FF91000E422D8 /* KamaalExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CA4D3ED2A7EAF3C005FAD6D /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalExtensions;
+		};
 		2C683B9E2A7ED31A008C8D21 /* KamaalSettings */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2CA4D3ED2A7EAF3C005FAD6D /* XCRemoteSwiftPackageReference "KamaalSwift" */;
