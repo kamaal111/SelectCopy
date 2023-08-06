@@ -15,6 +15,10 @@
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
 		2C683B9D2A7ED26E008C8D21 /* AppSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */; };
 		2C683B9F2A7ED31A008C8D21 /* KamaalSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 2C683B9E2A7ED31A008C8D21 /* KamaalSettings */; };
+		2C714D362A7FA687004796F5 /* PlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C714D352A7FA687004796F5 /* PlaygroundApp.swift */; };
+		2C714D382A7FA687004796F5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C714D372A7FA687004796F5 /* ContentView.swift */; };
+		2C714D3A2A7FA688004796F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C714D392A7FA688004796F5 /* Assets.xcassets */; };
+		2C714D3D2A7FA688004796F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C714D3C2A7FA688004796F5 /* Preview Assets.xcassets */; };
 		2CA4D3F52A7EAF3C005FAD6D /* KamaalExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA4D3F42A7EAF3C005FAD6D /* KamaalExtensions */; };
 		2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCDF51B2A7EEA1C0028900C /* UserData.swift */; };
 		2CDF1D512A7EEF5800C3C60E /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF1D502A7EEF5800C3C60E /* AppMenu.swift */; };
@@ -31,6 +35,12 @@
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
 		2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsScreen.swift; sourceTree = "<group>"; };
+		2C714D332A7FA687004796F5 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C714D352A7FA687004796F5 /* PlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundApp.swift; sourceTree = "<group>"; };
+		2C714D372A7FA687004796F5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C714D392A7FA688004796F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C714D3C2A7FA688004796F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C714D3E2A7FA688004796F5 /* Playground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Playground.entitlements; sourceTree = "<group>"; };
 		2CCDF51B2A7EEA1C0028900C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2CDF1D4D2A7EEDA100C3C60E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CDF1D4E2A7EEEAF00C3C60E /* justfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = justfile; sourceTree = "<group>"; };
@@ -50,6 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C714D302A7FA687004796F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +77,7 @@
 				2CDF1D4F2A7EEEB900C3C60E /* package.json */,
 				2CDF1D4D2A7EEDA100C3C60E /* README.md */,
 				52DD34BFCA8501D27F7A61F4 /* Frameworks */,
+				2C714D342A7FA687004796F5 /* Playground */,
 				2C243D792A7C452800CBE04B /* Products */,
 				2C243D7A2A7C452800CBE04B /* SelectCopy */,
 			);
@@ -69,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2C243D782A7C452800CBE04B /* SelectCopy.app */,
+				2C714D332A7FA687004796F5 /* Playground.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +114,26 @@
 			isa = PBXGroup;
 			children = (
 				2C243D822A7C452900CBE04B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C714D342A7FA687004796F5 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				2C714D352A7FA687004796F5 /* PlaygroundApp.swift */,
+				2C714D372A7FA687004796F5 /* ContentView.swift */,
+				2C714D392A7FA688004796F5 /* Assets.xcassets */,
+				2C714D3E2A7FA688004796F5 /* Playground.entitlements */,
+				2C714D3B2A7FA688004796F5 /* Preview Content */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		2C714D3B2A7FA688004796F5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2C714D3C2A7FA688004796F5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -131,6 +170,23 @@
 			productReference = 2C243D782A7C452800CBE04B /* SelectCopy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2C714D322A7FA687004796F5 /* Playground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C714D412A7FA688004796F5 /* Build configuration list for PBXNativeTarget "Playground" */;
+			buildPhases = (
+				2C714D2F2A7FA687004796F5 /* Sources */,
+				2C714D302A7FA687004796F5 /* Frameworks */,
+				2C714D312A7FA687004796F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Playground;
+			productName = Playground;
+			productReference = 2C714D332A7FA687004796F5 /* Playground.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -142,6 +198,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					2C243D772A7C452800CBE04B = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					2C714D322A7FA687004796F5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -163,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				2C243D772A7C452800CBE04B /* SelectCopy */,
+				2C714D322A7FA687004796F5 /* Playground */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +235,15 @@
 				2C243D832A7C452900CBE04B /* Preview Assets.xcassets in Resources */,
 				2C4192B12A7C46F10037485A /* Localizable.strings in Resources */,
 				2C243D802A7C452900CBE04B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C714D312A7FA687004796F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C714D3D2A7FA688004796F5 /* Preview Assets.xcassets in Resources */,
+				2C714D3A2A7FA688004796F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +261,15 @@
 				2C243D7C2A7C452800CBE04B /* SelectCopyApp.swift in Sources */,
 				2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */,
 				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C714D2F2A7FA687004796F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C714D382A7FA687004796F5 /* ContentView.swift in Sources */,
+				2C714D362A7FA687004796F5 /* PlaygroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +445,60 @@
 			};
 			name = Release;
 		};
+		2C714D3F2A7FA688004796F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Playground/Playground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Playground/Preview Content\"";
+				DEVELOPMENT_TEAM = DXUKH9VF73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.Playground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2C714D402A7FA688004796F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Playground/Playground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Playground/Preview Content\"";
+				DEVELOPMENT_TEAM = DXUKH9VF73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.Playground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -384,6 +516,15 @@
 			buildConfigurations = (
 				2C243D882A7C452900CBE04B /* Debug */,
 				2C243D892A7C452900CBE04B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C714D412A7FA688004796F5 /* Build configuration list for PBXNativeTarget "Playground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C714D3F2A7FA688004796F5 /* Debug */,
+				2C714D402A7FA688004796F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
