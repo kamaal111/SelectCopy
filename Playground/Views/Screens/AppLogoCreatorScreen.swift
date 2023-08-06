@@ -12,7 +12,7 @@ import KamaalExtensions
 
 let PLAYGROUND_SELECTABLE_COLORS: [Color] = [
     .black,
-    .accentColor,
+    Color("AccentColor"),
 ]
 
 struct AppLogoCreatorScreen: View {
@@ -117,9 +117,10 @@ private final class ViewModel {
     func logoView(size: CGFloat, cornerRadius: CGFloat) -> some View {
         AppLogo(
             size: size,
-            backgroundColor: hasABackground ? backgroundColor : .white.opacity(0),
+            backgroundColor: backgroundColor,
             primaryColor: primaryColor,
-            curvedCornersSize: cornerRadius
+            curvedCornersSize: cornerRadius,
+            hasABackrgound: hasABackground
         )
     }
 
