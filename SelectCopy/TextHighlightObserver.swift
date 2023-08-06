@@ -7,7 +7,7 @@
 
 import Cocoa
 import Combine
-import KamaalExtensions
+import KamaalLogger
 
 private let HIGHLIGHTED_TEXT_INTERVAL: TimeInterval = 0.01
 private let HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS = 0.3
@@ -17,25 +17,37 @@ final class TextHighlightObserver {
 
     private var highlightedTextBufferSubscription = Set<AnyCancellable>()
     private var observerTimer: Timer?
+    private var hasStarted = false
+    private let logger = KamaalLogger(from: TextHighlightObserver.self, failOnError: true)
 
     func start() {
+        guard !hasStarted else {
+            logger.debug("Starting but already started")
+            return
+        }
+
+        logger.info("Starting observer")
+        hasStarted = true
         observeTextHighlighting()
         observeHighlightedTextBuffer()
     }
 
     func stop() {
+        logger.info("Stopping observer")
         observerTimer?.invalidate()
         observerTimer = nil
         highlightedTextBuffer = nil
+        hasStarted = false
     }
 
     private func observeTextHighlighting() {
+        assert(observerTimer == nil)
         observerTimer = Timer
             .scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] _ in
                 guard let self else { return }
                 guard let focusedElement = AXUIElement.focusedElement else { return }
                 guard let selectedText = focusedElement.getSelectedText() else { return }
-                guard !selectedText.trimmingByWhitespacesAndNewLines.isEmpty else { return }
+                guard !selectedText.isEmpty else { return }
                 guard selectedText != highlightedTextBuffer else { return }
 
                 highlightedTextBuffer = selectedText
@@ -55,6 +67,7 @@ final class TextHighlightObserver {
     }
 
     private func storeHighlightedText(_ highlightedText: String) {
+        logger.debug("Storing the text:\n\(highlightedText)")
         let pasteboard = NSPasteboard.general
         pasteboard.declareTypes([.string], owner: nil)
         pasteboard.setString(highlightedText, forType: .string)

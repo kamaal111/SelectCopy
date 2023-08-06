@@ -7,6 +7,9 @@
 
 import Cocoa
 import Foundation
+import KamaalLogger
+
+private let logger = KamaalLogger(from: AXUIElement.self, failOnError: true)
 
 extension AXUIElement {
     func getSelectedText() -> String? {
@@ -19,6 +22,10 @@ extension AXUIElement {
         guard error == .success else { return [] }
 
         return (attirbutes as? [String]) ?? []
+    }
+
+    static var isTrustedToUseAccessibilty: Bool {
+        AXIsProcessTrusted()
     }
 
     static var focusedElement: AXUIElement? {
@@ -38,7 +45,10 @@ extension AXUIElement {
         var value: AnyObject?
         let error = AXUIElementCopyAttributeValue(self, attribute.asCFString, &value)
         guard error == .success else { return nil }
-        guard let value else { return nil }
+        guard let value else {
+            logger.debug("Get raw value error: \(error.rawValue)")
+            return nil
+        }
 
         return value
     }
