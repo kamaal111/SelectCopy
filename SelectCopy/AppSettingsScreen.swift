@@ -13,7 +13,7 @@ struct AppSettingsScreen: View {
 
     var body: some View {
         SettingsScreen(configuration: userData.settingsConfiguration)
-            .frame(width: 300, height: 100)
+            .frame(width: 300, height: 160)
     }
 }
 

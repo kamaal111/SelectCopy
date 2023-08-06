@@ -28,6 +28,12 @@ extension AXUIElement {
         AXIsProcessTrusted()
     }
 
+    @discardableResult
+    static func requestForAccess() -> Bool {
+        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
+        return AXIsProcessTrustedWithOptions(options as CFDictionary?)
+    }
+
     static var focusedElement: AXUIElement? {
         guard let value = systemWide.getValue(for: .focuseElement) else { return nil }
 

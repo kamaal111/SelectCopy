@@ -22,9 +22,20 @@ final class AppDelegate: NSObject {
         keyEquivalent: ""
     )
 
+    private lazy var enableInSystemPreferencesMenuItem: NSMenuItem = {
+        let item = NSMenuItem(
+            title: NSLocalizedString("Enable in System Preferences", comment: ""),
+            action: #selector(openSystemPrefencesWithAccessiblityAccess),
+            keyEquivalent: ""
+        )
+        item.isHidden = !shouldRequestForAccess
+        return item
+    }()
+
     private lazy var menu: NSMenu = {
         let menu = NSMenu()
         menu.addItem(canCopyTextMenuItem)
+        menu.addItem(enableInSystemPreferencesMenuItem)
         menu.addItem(
             withTitle: NSLocalizedString("Settings", comment: ""),
             action: #selector(openPreferences),
@@ -46,7 +57,10 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_: Notification) {
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
-        if copyOnHighlightIsEnabled {
+        if shouldRequestForAccess {
+            AXUIElement.requestForAccess()
+            textHighlightObserver.start()
+        } else if copyOnHighlightIsEnabled {
             logger.info("Starting text highlight observer from the start")
             textHighlightObserver.start()
         }
@@ -56,6 +70,7 @@ extension AppDelegate: NSApplicationDelegate {
 extension AppDelegate: NSMenuDelegate {
     func menuWillOpen(_: NSMenu) {
         canCopyTextMenuItem.title = toggleCopyMenuItemText
+        enableInSystemPreferencesMenuItem.isHidden = !shouldRequestForAccess
     }
 }
 
@@ -69,8 +84,12 @@ extension AppDelegate {
         return NSLocalizedString("Enable", comment: "")
     }
 
+    private var shouldRequestForAccess: Bool {
+        !AXUIElement.isTrustedToUseAccessibilty
+    }
+
     private var copyOnHighlightIsEnabled: Bool {
-        AXUIElement.isTrustedToUseAccessibilty && !(UserDefaults.copyingOnHighlightIsDisabled ?? false)
+        !shouldRequestForAccess && !(UserDefaults.copyingOnHighlightIsDisabled ?? false)
     }
 
     private func setupStatusItem() {
@@ -90,8 +109,12 @@ extension AppDelegate {
     }
 
     @objc
-    private func toggleCopy(_: NSMenuItem) {
-        if !copyOnHighlightIsEnabled {
+    private func toggleCopy(_ item: NSMenuItem) {
+        assert(item == canCopyTextMenuItem)
+        if shouldRequestForAccess {
+            AXUIElement.requestForAccess()
+            textHighlightObserver.start()
+        } else if !copyOnHighlightIsEnabled {
             logger.info("Enabling copying highlighted text")
             UserDefaults.copyingOnHighlightIsDisabled = false
             textHighlightObserver.start()
@@ -100,6 +123,15 @@ extension AppDelegate {
             UserDefaults.copyingOnHighlightIsDisabled = true
             textHighlightObserver.stop()
         }
+    }
+
+    @objc
+    private func openSystemPrefencesWithAccessiblityAccess(_ item: NSMenuItem) {
+        assert(item == enableInSystemPreferencesMenuItem)
+        let preferencesURL = URL(
+            string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"
+        )!
+        NSWorkspace.shared.open(preferencesURL)
     }
 
     @objc

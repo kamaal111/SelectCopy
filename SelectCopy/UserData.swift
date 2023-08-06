@@ -15,7 +15,7 @@ final class UserData: ObservableObject {
         color: Color("AccentColor")
     )
 
-    private let showLogs = false
+    private let showLogs = true
 
     var settingsConfiguration: SettingsConfiguration {
         .init(color: colorConfiguration, showLogs: showLogs)
