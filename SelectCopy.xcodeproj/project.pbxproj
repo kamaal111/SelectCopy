@@ -19,6 +19,7 @@
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
+		2C44EA612A817B2C00917C97 /* DispatchQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44EA602A817B2C00917C97 /* DispatchQueues.swift */; };
 		2C4B38402A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */; };
 		2C4DC8C02A7FAED8007501E5 /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */; };
 		2C683B9D2A7ED26E008C8D21 /* AppSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */; };
@@ -50,6 +51,7 @@
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
+		2C44EA602A817B2C00917C97 /* DispatchQueues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueues.swift; sourceTree = "<group>"; };
 		2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoColorFormRow.swift; sourceTree = "<group>"; };
 		2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
 		2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsScreen.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				2C4192AE2A7C46DF0037485A /* AppDelegate.swift */,
 				2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */,
 				2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */,
+				2C44EA602A817B2C00917C97 /* DispatchQueues.swift */,
 				2C243D7B2A7C452800CBE04B /* SelectCopyApp.swift */,
 				2CDF1D522A7EF73200C3C60E /* TextHighlightObserver.swift */,
 				2CCDF51B2A7EEA1C0028900C /* UserData.swift */,
@@ -338,6 +341,7 @@
 				2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */,
 				2CF89D0D2A80285D0062E08A /* UserDefaults.swift in Sources */,
 				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
+				2C44EA612A817B2C00917C97 /* DispatchQueues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,6 +54,7 @@ extension AXUIElement {
     private func getRawValue(for attribute: AXAttributes) -> AnyObject? {
         var value: AnyObject?
         let error = AXUIElementCopyAttributeValue(self, attribute.asCFString, &value)
+        guard error != .noValue else { return nil }
         guard error == .success else {
             logger.debug("Get raw value error: \(error.rawValue)")
             return nil
