@@ -16,6 +16,10 @@ extension AXUIElement {
         getValue(for: .selectedText) as? String
     }
 
+    func getChildren() -> [AXUIElement]? {
+        getValue(for: .children) as? [AXUIElement]
+    }
+
     func getAttributeNames() -> [String] {
         var attirbutes: CFArray?
         let error = AXUIElementCopyAttributeNames(self, &attirbutes)
@@ -50,11 +54,11 @@ extension AXUIElement {
     private func getRawValue(for attribute: AXAttributes) -> AnyObject? {
         var value: AnyObject?
         let error = AXUIElementCopyAttributeValue(self, attribute.asCFString, &value)
-        guard error == .success else { return nil }
-        guard let value else {
+        guard error == .success else {
             logger.debug("Get raw value error: \(error.rawValue)")
             return nil
         }
+        guard let value else { return nil }
 
         return value
     }
@@ -63,7 +67,11 @@ extension AXUIElement {
         switch CFGetTypeID(value) {
         case AXUIElementGetTypeID(): return value as! AXUIElement
         case AXValueGetTypeID(): return (value as! AXValue).getValue()
-        default: return value
+        default:
+            switch value {
+            case let value as [AXUIElement]: return value
+            default: return value
+            }
         }
     }
 
@@ -73,11 +81,13 @@ extension AXUIElement {
 private enum AXAttributes {
     case selectedText
     case focuseElement
+    case children
 
     var rawValue: String {
         switch self {
         case .focuseElement: return kAXFocusedUIElementAttribute
-        case .selectedText: return "AXSelectedText"
+        case .selectedText: return kAXSelectedTextAttribute
+        case .children: return kAXChildrenAttribute
         }
     }
 
