@@ -16,11 +16,12 @@ jobs:
     timeout-minutes: 15
     runs-on: macos-13
     steps:
-      - name: Git - Checkout
+      - name: Checkout certificates
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref }}
-          submodules: recursive
+          repository: kamaal111/CodeSign
+          ref: refs/heads/main
+          token: ${{ secrets.CODE_SIGN_ACCESS_TOKEN }}
 
       - name: Install just
         uses: taiki-e/install-action@just
@@ -29,6 +30,17 @@ jobs:
         run: |
           ls -d /Applications/Xcode*
           sudo xcode-select --switch /Applications/$XCODE_APP_NAME/Contents/Developer
+
+      - name: Import signing private key
+        env:
+          SIGNING_PRIVATE_KEY: SigningCertificates/Development/Apple Development Kamaal Farah (RH5CK7M348).p12
+        run: just import-signing-private-key "${{ env.SIGNING_PRIVATE_KEY }}" "${{ secrets.DEVELOPMENT_SIGNING_CERTIFICATE_PASSWORD }}" "${{ secrets.KEYCHAIN_PASSPHRASE }}"
+
+      - name: Checkout SelectCopy
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+          submodules: recursive
 
       - name: Bootstrap project
         run: just bootstrap
