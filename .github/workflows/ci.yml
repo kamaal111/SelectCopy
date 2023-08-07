@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  XCODE_APP_NAME: Xcode_14.3.1.app
+
+jobs:
+  build:
+    name: Build
+    timeout-minutes: 15
+    runs-on: macos-13
+    steps:
+      - name: Git - Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+          submodules: recursive
+
+      - name: Install just
+        uses: taiki-e/install-action@just
+
+      - name: Select Xcode version
+        run: |
+          ls -d /Applications/Xcode*
+          sudo xcode-select --switch /Applications/$XCODE_APP_NAME/Contents/Developer
+
+      - name: Bootstrap project
+        run: just bootstrap
+
+      - name: Format
+        run: just format
+
+      - name: Build
+        run: just build
