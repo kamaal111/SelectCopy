@@ -16,7 +16,3 @@ struct AppSettingsScreen: View {
             .frame(width: 300, height: 160)
     }
 }
-
-#Preview {
-    AppSettingsScreen()
-}
