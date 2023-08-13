@@ -17,6 +17,7 @@
 		2C2D64262A81901500A1518D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C2D64252A81901500A1518D /* LICENSE */; };
 		2C318A932A80092100CA9B51 /* app-icon-generator in Resources */ = {isa = PBXBuildFile; fileRef = 2C318A922A80092100CA9B51 /* app-icon-generator */; };
 		2C3AD8532A7FAB4400D624FB /* AppLogoCreatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */; };
+		2C3D17FF2A88FAE20037520B /* AXUIElementSplunker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */; };
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
@@ -47,10 +48,13 @@
 		2C243D7F2A7C452900CBE04B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C243D822A7C452900CBE04B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C243D842A7C452900CBE04B /* SelectCopy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SelectCopy.entitlements; sourceTree = "<group>"; };
+		2C2D5FDA2A88ED8F00BCCCC4 /* SelectCopy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SelectCopy-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C2D64252A81901500A1518D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2C2D64272A81902400A1518D /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		2C318A922A80092100CA9B51 /* app-icon-generator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "app-icon-generator"; sourceTree = "<group>"; };
 		2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoCreatorScreen.swift; sourceTree = "<group>"; };
+		2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIElementSplunker.m; sourceTree = "<group>"; };
+		2C3D18002A88FCC80037520B /* AXUIElementSplunker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIElementSplunker.h; sourceTree = "<group>"; };
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
@@ -126,6 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				2C243D842A7C452900CBE04B /* SelectCopy.entitlements */,
+				2C3D18002A88FCC80037520B /* AXUIElementSplunker.h */,
+				2C2D5FDA2A88ED8F00BCCCC4 /* SelectCopy-Bridging-Header.h */,
+				2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */,
 				2C4192B02A7C46F10037485A /* Localizable.strings */,
 				2C4192AE2A7C46DF0037485A /* AppDelegate.swift */,
 				2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */,
@@ -283,6 +290,7 @@
 				TargetAttributes = {
 					2C243D772A7C452800CBE04B = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1500;
 					};
 					2C714D322A7FA687004796F5 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -348,6 +356,7 @@
 				2CF89D0D2A80285D0062E08A /* UserDefaults.swift in Sources */,
 				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
 				2C44EA612A817B2C00917C97 /* DispatchQueues.swift in Sources */,
+				2C3D17FF2A88FAE20037520B /* AXUIElementSplunker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SelectCopy/SelectCopy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -509,6 +519,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.SelectCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SelectCopy/SelectCopy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -518,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SelectCopy/SelectCopy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -538,6 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.SelectCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SelectCopy/SelectCopy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

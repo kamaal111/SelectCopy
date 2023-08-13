@@ -55,6 +55,8 @@ final class AppDelegate: NSObject {
 
 extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_: Notification) {
+        let splunker = AXUIElementSplunker()
+        print(splunker)
         setupStatusItem()
         closeAllWindowsExceptForStatusBarWindow()
         if shouldRequestForAccess {
