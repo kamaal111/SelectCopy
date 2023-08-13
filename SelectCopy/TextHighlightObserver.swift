@@ -45,7 +45,10 @@ final class TextHighlightObserver {
         observerTimer = Timer
             .scheduledTimer(withTimeInterval: HIGHLIGHTED_TEXT_INTERVAL, repeats: true) { [weak self] _ in
                 guard let self else { return }
-                guard let focusedElement = AXUIElement.focusedElement else { return }
+                guard var focusedElement = AXUIElement.focusedElement else { return }
+                let splunker = AXUIElementSplunker(focusedElement)
+                let element = splunker?.element
+                print(element)
                 guard let selectedText = focusedElement.getSelectedText() else { return }
                 guard !selectedText.isEmpty else { return }
                 guard selectedText != highlightedTextBuffer else { return }

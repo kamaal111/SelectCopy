@@ -9,8 +9,13 @@
 #define AXUIElementSplunker_h
 
 #import <Foundation/Foundation.h>
+#import <ApplicationServices/ApplicationServices.h>
 
 @interface AXUIElementSplunker : NSObject
+
+@property AXUIElementRef element;
+
+- (id)init: (AXUIElementRef)element;
 
 @end
 
