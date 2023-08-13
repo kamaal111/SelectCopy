@@ -59,22 +59,20 @@ final class TextHighlightObserver {
     }
 
     private func observeHighlightedTextBuffer() {
-        DispatchQueue.highlightedTextBuffer.async { [weak self] in
-            guard let self else { return }
-
-            $highlightedTextBuffer
-                .debounce(
-                    for: .seconds(HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS),
-                    scheduler: DispatchQueue.highlightedTextBuffer
-                )
-                .sink(receiveValue: { [weak self] value in
+        $highlightedTextBuffer
+            .debounce(
+                for: .seconds(HIGHLIGHTED_TEXT_DEBOUNCE_INTERVAL_IN_SECONDS),
+                scheduler: DispatchQueue.highlightedTextBuffer
+            )
+            .sink(receiveValue: { value in
+                DispatchQueue.highlightedTextBuffer.async { [weak self] in
                     guard let self else { return }
                     guard let value else { return }
 
                     storeHighlightedText(value)
-                })
-                .store(in: &highlightedTextBufferSubscription)
-        }
+                }
+            })
+            .store(in: &highlightedTextBufferSubscription)
     }
 
     private func storeHighlightedText(_ highlightedText: String) {

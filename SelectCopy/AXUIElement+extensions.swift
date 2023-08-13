@@ -20,6 +20,12 @@ extension AXUIElement {
         getValue(for: .children) as? [AXUIElement]
     }
 
+    func getTestingStuff() -> AXTextMarkerRange? {
+        guard let value = getValue(for: .testingStuff) else { return nil }
+
+        return value as! AXTextMarkerRange
+    }
+
     func getAttributeNames() -> [String] {
         var attirbutes: CFArray?
         let error = AXUIElementCopyAttributeNames(self, &attirbutes)
@@ -71,6 +77,7 @@ extension AXUIElement {
         default:
             switch value {
             case let value as [AXUIElement]: return value
+            case let value as AXTextMarkerRange: return value
             default: return value
             }
         }
@@ -83,12 +90,22 @@ private enum AXAttributes {
     case selectedText
     case focuseElement
     case children
+    case testingStuff
 
     var rawValue: String {
         switch self {
         case .focuseElement: return kAXFocusedUIElementAttribute
         case .selectedText: return kAXSelectedTextAttribute
         case .children: return kAXChildrenAttribute
+        case .testingStuff: return "AXSelectedTextMarkerRange"
+//            ["AXURL", "AXPreventKeyboardDOMEventDispatch", "AXHasDocumentRoleAncestor", "AXRoleDescription",
+//            "AXParent", "AXFocused", "AXTitle", "AXStartTextMarker", "AXDOMIdentifier", "AXHelp", "AXVisited",
+//            "AXLayoutCount", "AXChildren", "AXHasWebApplicationAncestor", "AXDOMClassList", "AXLoadingProgress",
+//            "AXDescription", "AXEnabled", "AXTopLevelUIElement", "AXSize", "AXWindow", "AXRole", "AXBlockQuoteLevel",
+//            "AXTextInputMarkedRange", "AXVisibleCharacterRange", "AXCaretBrowsingEnabled", "AXLinkUIElements",
+//            "AXLoaded", "AXWebSessionID", "AXElementBusy", "_AXPrimaryScreenHeight", "AXEndTextMarker", "AXValue",
+//            "AXLinkedUIElements", "AXSelected", "AXChildrenInNavigationOrder", "AXPosition", "AXCustomContent",
+//            "AXSelectedTextMarkerRange", "AXLanguage", "AXFrame"]
         }
     }
 
