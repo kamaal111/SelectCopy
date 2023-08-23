@@ -20,6 +20,19 @@ extension AXUIElement {
         getValue(for: .children) as? [AXUIElement]
     }
 
+    func extractHighlightedText() -> String? {
+        guard let selectedText = getSelectedText() else {
+            if let stuff = getTestingStuff() {
+                let splunker = AXTextMarkerRangeSplunker(stuff)!
+                print(splunker)
+            }
+            return nil
+        }
+        guard !selectedText.isEmpty else { return nil }
+
+        return selectedText
+    }
+
     func getTestingStuff() -> AXTextMarkerRange? {
         guard let value = getValue(for: .testingStuff) else { return nil }
 

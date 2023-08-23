@@ -17,13 +17,13 @@
 		2C2D64262A81901500A1518D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C2D64252A81901500A1518D /* LICENSE */; };
 		2C318A932A80092100CA9B51 /* app-icon-generator in Resources */ = {isa = PBXBuildFile; fileRef = 2C318A922A80092100CA9B51 /* app-icon-generator */; };
 		2C3AD8532A7FAB4400D624FB /* AppLogoCreatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */; };
-		2C3D17FF2A88FAE20037520B /* AXUIElementSplunker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */; };
 		2C4192AF2A7C46DF0037485A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192AE2A7C46DF0037485A /* AppDelegate.swift */; };
 		2C4192B12A7C46F10037485A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4192B02A7C46F10037485A /* Localizable.strings */; };
 		2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */; };
 		2C44EA612A817B2C00917C97 /* DispatchQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44EA602A817B2C00917C97 /* DispatchQueues.swift */; };
 		2C4B38402A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */; };
 		2C4DC8C02A7FAED8007501E5 /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */; };
+		2C662D782A96827E0071CDB8 /* AXTextMarkerRangeSplunker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C662D772A96827E0071CDB8 /* AXTextMarkerRangeSplunker.m */; };
 		2C683B9D2A7ED26E008C8D21 /* AppSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */; };
 		2C683B9F2A7ED31A008C8D21 /* KamaalSettings in Frameworks */ = {isa = PBXBuildFile; productRef = 2C683B9E2A7ED31A008C8D21 /* KamaalSettings */; };
 		2C714D362A7FA687004796F5 /* PlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C714D352A7FA687004796F5 /* PlaygroundApp.swift */; };
@@ -53,14 +53,14 @@
 		2C2D64272A81902400A1518D /* Brewfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
 		2C318A922A80092100CA9B51 /* app-icon-generator */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "app-icon-generator"; sourceTree = "<group>"; };
 		2C3AD8522A7FAB4400D624FB /* AppLogoCreatorScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoCreatorScreen.swift; sourceTree = "<group>"; };
-		2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIElementSplunker.m; sourceTree = "<group>"; };
-		2C3D18002A88FCC80037520B /* AXUIElementSplunker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIElementSplunker.h; sourceTree = "<group>"; };
 		2C4192AE2A7C46DF0037485A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4192B02A7C46F10037485A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C4192B22A7C486A0037485A /* AXUIElement+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AXUIElement+extensions.swift"; sourceTree = "<group>"; };
 		2C44EA602A817B2C00917C97 /* DispatchQueues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueues.swift; sourceTree = "<group>"; };
 		2C4B383F2A7FF5AD00CF5EBC /* AppLogoColorFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogoColorFormRow.swift; sourceTree = "<group>"; };
 		2C4DC8BF2A7FAED8007501E5 /* AppLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
+		2C662D762A9682310071CDB8 /* AXTextMarkerRangeSplunker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTextMarkerRangeSplunker.h; sourceTree = "<group>"; };
+		2C662D772A96827E0071CDB8 /* AXTextMarkerRangeSplunker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTextMarkerRangeSplunker.m; sourceTree = "<group>"; };
 		2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsScreen.swift; sourceTree = "<group>"; };
 		2C714D332A7FA687004796F5 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C714D352A7FA687004796F5 /* PlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundApp.swift; sourceTree = "<group>"; };
@@ -130,9 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				2C243D842A7C452900CBE04B /* SelectCopy.entitlements */,
-				2C3D18002A88FCC80037520B /* AXUIElementSplunker.h */,
+				2C662D762A9682310071CDB8 /* AXTextMarkerRangeSplunker.h */,
 				2C2D5FDA2A88ED8F00BCCCC4 /* SelectCopy-Bridging-Header.h */,
-				2C3D17FE2A88FAE20037520B /* AXUIElementSplunker.m */,
+				2C662D772A96827E0071CDB8 /* AXTextMarkerRangeSplunker.m */,
 				2C4192B02A7C46F10037485A /* Localizable.strings */,
 				2C4192AE2A7C46DF0037485A /* AppDelegate.swift */,
 				2C683B9C2A7ED26E008C8D21 /* AppSettingsScreen.swift */,
@@ -353,10 +353,10 @@
 				2CDF1D532A7EF73200C3C60E /* TextHighlightObserver.swift in Sources */,
 				2C243D7C2A7C452800CBE04B /* SelectCopyApp.swift in Sources */,
 				2CCDF51C2A7EEA1C0028900C /* UserData.swift in Sources */,
+				2C662D782A96827E0071CDB8 /* AXTextMarkerRangeSplunker.m in Sources */,
 				2CF89D0D2A80285D0062E08A /* UserDefaults.swift in Sources */,
 				2C4192B32A7C486A0037485A /* AXUIElement+extensions.swift in Sources */,
 				2C44EA612A817B2C00917C97 /* DispatchQueues.swift in Sources */,
-				2C3D17FF2A88FAE20037520B /* AXUIElementSplunker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
